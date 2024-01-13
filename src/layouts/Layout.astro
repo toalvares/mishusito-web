@@ -1,0 +1,34 @@
+---
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+import "@fontsource-variable/jost";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <slot />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+  </body>
+</html>
+<style is:global>
+  html {
+    font-family: "Jost Variable", sans-serif;
+    background: #f9f9f9;
+    background-size: 224px;
+  }
+</style>
